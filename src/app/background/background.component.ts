@@ -50,7 +50,7 @@ export class BackgroundComponent implements OnInit {
   // }
  
   
-  photo="../../assets/bg.jpg"
+  // photo="../../assets/bg.jpg,"
   
 
   ngOnInit() {
