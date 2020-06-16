@@ -1,0 +1,26 @@
+#container {
+padding: 2em;
+
+}
+    #list{
+    padding: 1em;
+    display: block;
+    background: floralwhite;
+    margin-bottom: 10px;
+    }
+
+    button {
+    border: none;
+    margin: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: blueviolet;
+    color:antiquewhite;
+    }
+
+    .col {
+        width:33%;
+        display: inline-block;
+        padding: 40px 0;
+        color: gray;
+    }
