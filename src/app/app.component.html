@@ -1,4 +1,13 @@
-<main [@routeAnimations]="prepareRoute(outlet)" class="content">
+<!-- <main [@routeAnimations]="prepareRoute(outlet)" class="content">
     <app-background></app-background> 
     <router-outlet #outlet="outlet"></router-outlet>
-</main>
+</main> -->
+
+<div id="container" [@listAnimation]="items.length">
+    <button (click)="pushItem()">Add Item</button>
+    <button (click)="removeItem()">Remove Item</button>
+    <div id="list" *ngFor="let item of items">
+
+        {{item}}
+    </div>
+</div>

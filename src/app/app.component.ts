@@ -17,6 +17,19 @@ import { fader } from "./route-animations";
 export class AppComponent {
   title = 'train';
 
+  items = [];
+
+  constructor(){
+    this.items = ['Isuri','Geethma','Liyange'];
+  }
+
+  pushItem(){
+    this.items.push('Oh yeah that is awesome');
+  }
+
+  removeItem(){
+    this.items.pop();
+  }
   prepareRoute(outlet: RouterOutlet){
     return outlet && outlet.activatedRouteData  && outlet.activatedRouteData['animation'];
  
