@@ -37,3 +37,35 @@ img-fluid{
 .btn{
   margin-left: 80px;
 }
+
+#container {
+  padding: 2em;
+  
+  }
+      #list{
+      padding: 1em;
+      display: block;
+      background-color:darkslategrey;
+      margin-bottom: 10px;
+      color:black;
+      
+    
+      }
+  
+      button {
+     
+      margin: 10px;
+      margin-bottom: 20px;
+      /* padding: 10px; */
+      color:antiquewhite;
+      font-style: italic;
+      
+      }
+  
+      .col {
+          width:50%;
+          display: inline-block;
+          padding: 40px 0;
+          color:cadetblue
+      }
+  

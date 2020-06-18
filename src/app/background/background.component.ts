@@ -1,57 +1,40 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { trigger, state, style, transition, animate,query,stagger } from "@angular/animations";
+import { trigger, state, style, transition, animate,query,stagger,keyframes } from "@angular/animations";
 
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
   styleUrls: ['./background.component.css'],
   animations:[
-    trigger('photoState',[
-      state('move',style({
-        transform: 'translateX(-100%)  translateY(50px)',
-      })),
-      state('enlarge',style({
-        transform: 'scale(1.5)',
-      })),
-      state('spin',style({
-        transform: 'rotateY(180deg) rotateZ(90deg) ',
-      })),
-      transition('spin => move', animate('200ms easw-out')),
-      transition('* => *', animate('500ms ease')),
+    trigger('listAnimation',[
+      transition('* => *',[
+        query(':enter', style({opacity:0}), {optional:true}),
+        query(':enter', stagger('300ms', [
+          animate('1s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-75px)',offset: 0}),
+            style({opacity: 0.5, transform: 'translateY(35px)',offset: 0.3}),
+            style({opacity: 1, transform: 'translateY(0)',offset: 1}),
+           ]))
+        ]))
+
+      ])
     ])
   ]
-  // animations: [
-  //   trigger('photosAnimations',[
-  //     transition('* => *',[
-  //       query('img', style({ transform: 'translateX(-100%)'}), {optional: true}),
-  //       query('img', 
-  //         stagger('600ms', [
-  //           animate('900ms',style({transform: 'translateX(0)' }))
-  //         ]),{optional: true})
-  //     ])
-  //   ])
-  // ]
-})
+  
+  })
 export class BackgroundComponent implements OnInit {
 
-  
-
-  constructor(private elementRef: ElementRef) { }
-
-  ngAfterViewInit(){
-    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'black';
- }
-
-  position: string;
-  photoUrl="../../assets/last.png"
-
-  changePosition(newPosition: string){
-      this.position = newPosition
+  items = [];
+  constructor(private elementRef: ElementRef) {
+    this.items = ['Where is the train is a train tracking sysytem','Geethma','Liyange'];
+   }
+pushItem(){
+    this.items.push('Oh yeah that is awesome');
+    this.items.push('dafafsafafafafa');
   }
- 
-  
-  // photo="../../assets/bg.jpg,"
-  
+removeItem(){
+    this.items.pop();
+  }
 
   ngOnInit() {
   }
