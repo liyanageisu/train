@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { trigger, state, style, transition, animate,query,stagger,keyframes } from "@angular/animations";
+  import { trigger, state, style, transition, animate,query,stagger,keyframes } from "@angular/animations";
 
 @Component({
   selector: 'app-background',
@@ -26,11 +26,10 @@ export class BackgroundComponent implements OnInit {
 
   items = [];
   constructor(private elementRef: ElementRef) {
-    this.items = ['Where is the train is a train tracking sysytem','Geethma','Liyange'];
+    this.items = ['In our system we have to overcome all the above problems. So we are planning to develop both mobile and web applications. There will be three actors in our platform. They are admin, drivers and users. When we talk about users, users means passengers. They can create accounts. They can track train if they are logged in to the system. Otherwise users can only get train schedules and delay notifications','#','#'];
    }
 pushItem(){
-    this.items.push('Oh yeah that is awesome');
-    this.items.push('dafafsafafafafa');
+    this.items.push('#');
   }
 removeItem(){
     this.items.pop();
